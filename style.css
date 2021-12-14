@@ -12,10 +12,11 @@
     --line-color : hsl(215, 32%, 27%);
     --solft-blue : hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
+    --cyan-overlay: hsla(178, 100%, 50%, 0.5);
     --white: hl(0, 0%, 100%)
 }
 
-/* .page-wrapper {
+.page-wrapper {
     background-color: var(--main-bg-color);
     width: 100vw;
     height: 100vh;
@@ -23,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} */
+}
 
 .card {
     display: flex;
@@ -35,12 +36,14 @@
     max-width: 21rem;
     padding: 1.313rem;
     border-radius: 1rem;
-    font-family: 'Outfit';
+    font-family: 'Outfit', sans-serif;
 }
 
-.card h2 {
+.card a,.card h2 {
     color: white;
+    text-decoration: none;
     font-weight: 600;
+    transition: .35s ease-in-out;
 }
 
 .nft-description {
@@ -50,13 +53,36 @@
 }
 
 .img-wrap {
+    position: relative;
     overflow: hidden;
     height: 18rem;
     border-radius: .5rem;
     margin-bottom: .34rem;
+} 
+
+.img-wrap .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: var(--cyan-overlay);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .35s ease-in-out;
 }
 
-.img-wrap > img {
+.img-wrap .overlay img {
+    visibility: hidden;
+    opacity: 0;
+    width: 2.8rem;
+    height: auto;
+    transition: .35s ease-in-out;
+}
+
+.img-wrap img {
 height: 100%;
 width: 100%;
 object-fit: cover;
@@ -97,7 +123,6 @@ object-fit: cover;
     margin-right: 0.438rem;
     position: relative;
     top: .15rem;
-
 }
 
 .credit-wrapper {
@@ -120,4 +145,22 @@ object-fit: cover;
 
 .credit-wrapper a {
     color: #fff;
+    text-decoration: none;
+    transition: .35s ease-in-out;
 }
+
+/* Active/hover states */
+.img-wrap:hover .overlay,
+.img-wrap:hover .overlay img {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nft-title:hover, .nft-title:active {
+    color: var(--cyan);
+}
+
+.credit-wrapper a:hover, .credit-wrapper a:active {
+    color: var(--cyan);
+}
+
