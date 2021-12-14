@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-bg-color : hsl(217, 54%, 11%);
+    --card-bg-color : hsl(216, 50%, 16%);
+    --line-color : hsl(215, 32%, 27%);
+    --solft-blue : hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --white: hl(0, 0%, 100%)
+}
+
+/* .page-wrapper {
+    background-color: var(--main-bg-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--card-bg-color);
+    max-width: 21rem;
+    padding: 1.313rem;
+    border-radius: 1rem;
+    font-family: 'Outfit';
+}
+
+.card h2 {
+    color: white;
+    font-weight: 600;
+}
+
+.nft-description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--solft-blue);
+}
+
+.img-wrap {
+    overflow: hidden;
+    height: 18rem;
+    border-radius: .5rem;
+    margin-bottom: .34rem;
+}
+
+.img-wrap > img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+.nft-spec-container {
+    display: flex;
+    width: 100%;
+}
+
+.nft-price {
+    flex: 50%;
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+.nft-price::before {
+    content: url('images/icon-ethereum.svg');
+    display: inline-block;
+    height: auto;
+    width: auto;
+    margin-right: 0.438rem;
+    position: relative;
+    top: .15rem;
+}
+
+.nft-timer {
+    flex: 50%;
+    color: var(--solft-blue);
+    text-align: end;
+}
+
+.nft-timer::before {
+    content: url('images/icon-clock.svg');
+    display: inline-block;
+    height: auto;
+    width: auto;
+    margin-right: 0.438rem;
+    position: relative;
+    top: .15rem;
+
+}
+
+.credit-wrapper {
+    border-top: solid var(--line-color) 1px;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.credit-wrapper > img {
+    height: 2rem;
+    border-radius: 50%;
+    border: solid #fff 1px;
+}
+
+.credit-wrapper p {
+    color: var(--solft-blue);
+}
+
+.credit-wrapper a {
+    color: #fff;
+}
